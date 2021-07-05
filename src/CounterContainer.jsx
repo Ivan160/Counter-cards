@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Counter } from './Counter';
 import { Card } from './Card';
 
 export const CounterContainer = () => {
+  const [count, seCount] = useState(0);
 
   return (
     <div className="container">
-      <Counter />
+      <Counter min={0} max={30} value={count} onChange={seCount} />
 
-      <Card />
+      <div className="wrap">
+        {new Array(count).fill(1).map((_, index) => (
+          <Card key={index} label={index + 1} />
+        ))}
+      </div>
     </div>
   );
 };
