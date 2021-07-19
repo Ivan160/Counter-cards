@@ -7,7 +7,7 @@ export const CounterContainer = () => {
 
   return (
     <div className="container">
-      <Counter min={0} max={30} value={count} onChange={seCount} />
+      <Counter min={0} max={50} value={count} onChange={seCount} />
 
       <div className="wrap">
         {new Array(count).fill(1).map((_, index) => (
